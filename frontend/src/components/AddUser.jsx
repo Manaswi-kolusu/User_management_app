@@ -6,7 +6,6 @@ function AddUser() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
 
   let [loading, setLoading] = useState(false);

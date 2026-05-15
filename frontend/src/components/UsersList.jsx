@@ -18,9 +18,11 @@ function UsersList() {
           //update the state
           setUsers(resObj.payload);
         } else {
+          console.error("Failed to fetch users, status:", res.status);
         }
       } catch (err) {
         //set error
+        console.error("Error fetching users:", err);
       }
     }
 
