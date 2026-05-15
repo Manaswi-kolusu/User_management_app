@@ -36,6 +36,19 @@ UserApp.get("/users/:id", async (req, res, next) => {
   }
 });
 
+// Update User Details
+UserApp.put("/users/:id", async (req, res, next) => {
+  try {
+    let uid = req.params.id;
+    let updatedData = req.body;
+    let user = await UserModel.findByIdAndUpdate(uid, { $set: updatedData }, { new: true });
+    if (!user) return res.status(404).json({ message: "user not found" });
+    res.status(200).json({ message: "User updated", payload: user });
+  } catch (err) {
+    next(err);
+  }
+});
+
 // Soft Delete a User
 UserApp.delete("/users/:id", async (req, res, next) => {
   try {
