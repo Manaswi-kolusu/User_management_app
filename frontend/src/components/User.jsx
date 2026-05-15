@@ -44,7 +44,7 @@ function User() {
   const onUserEdit = async (updatedData) => {
     try {
       setLoading(true);
-      let res = await fetch(`http://localhost:5000/user-api/users/${user._id}`, {
+      let res = await fetch(`https://user-management-app-furb.onrender.com/user-api/users/${user._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData)

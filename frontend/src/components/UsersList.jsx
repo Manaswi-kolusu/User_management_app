@@ -8,7 +8,7 @@ function UsersList() {
   useEffect(() => {
     async function getUsers() {
       try {
-        let res = await fetch("http://localhost:5000/user-api/users", {
+        let res = await fetch("https://user-management-app-furb.onrender.com/user-api/users", {
           method: "GET",
         });
 
